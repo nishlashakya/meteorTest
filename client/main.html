@@ -1,0 +1,73 @@
+<head>
+	<title>mytest</title>
+
+	<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+	<!-- Web fonts -->
+    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400italic,600,700%7COpen+Sans:300,400,400italic,600,700">
+	<!-- Page JS Plugins -->
+    <script src="jquery-validation.min.js"></script>
+
+        <!-- Page JS Code -->
+        <!-- <script src="assets/js/pages/base_pages_register.js"></script> -->
+    <!-- Bootstrap and OneUI CSS framework -->
+    <!-- <link rel="stylesheet" href="assets/css/bootstrap.min.css"> -->
+    <!-- <link rel="stylesheet" id="css-main" href="assets/css/oneui.css"> -->
+
+</head>
+
+<body>
+	{{#if currentUser}}
+		{{> dashboard}}
+	{{else}}
+		{{> login}}
+		{{> register}}
+	{{/if}}
+</body>
+
+<template name="dashboard">
+	<h1>Welcome!</h1>
+	<button id="dashboard"> Log out </button>
+	<img src="./assets.images.meteor.jpg">
+
+</template>
+
+<template name="register">
+	<h3> Register here. It's free! </h3>
+	<form>
+		<div class="form-group row">
+			<label for="inputUsername" class="col-sm-2 col-form-label">Username</label>
+			<div class="col-sm-10">
+				<input type="text" class="form-control" id="inputUsername" placeholder="Username">
+			</div>
+		</div>
+		<div class="form-group row">
+			<label for="inputEmail" class="col-sm-2 col-form-label">Email</label>
+			<div class="col-sm-10">
+				<input type="email" class="form-control" id="inputEmail" placeholder="Email">
+			</div>
+		</div>
+		<div class="form-group row">
+			<label for="inputPassword" class="col-sm-2 col-form-label">Password</label>
+			<div class="col-sm-10">
+				<input type="password" class="form-control" id="inputPassword" placeholder="Password">
+			</div>
+		</div>
+		<input type="submit" class="btn btn-primary" value="Register">
+	</form>
+</template>
+
+<template name="login">
+	<h1>Welcome!</h1>
+	<form class="form-inline">
+		<label class="sr-only" for="inlineFormInput">Username</label>
+		<input type="email" class="form-control mb-2 mr-sm-2 mb-sm-0" id="loginUsername" placeholder="Username">
+
+		<label class="sr-only" for="inlineFormInputGroup">Password</label>
+		<input type="password" class="form-control" id="loginPassword" placeholder="Password">
+
+		<input type="submit" class="btn btn-primary" value="Login">
+	</form>
+	<hr>
+
+</template>
